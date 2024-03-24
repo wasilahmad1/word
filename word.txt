@@ -6,3 +6,8 @@ making changes in main after doing the first step
 
 
 making a branch name feature-branch and staging ,commiting and pushing
+ 
+deleted that feature-branch
+1.from local reposority (git branch -d feature-branch)
+2.from remote reposority (git push origin --delete feature-branch)
+
