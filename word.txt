@@ -11,4 +11,3 @@ deleted that feature-branch
 1.from local reposority (git branch -d feature-branch)
 2.from remote reposority (git push origin --delete feature-branch)
 
-again making feature-branch  
