@@ -12,3 +12,5 @@ deleted that feature-branch
 2.from remote reposority (git push origin --delete feature-branch)
 
 bbbbbbb
+
+making changes in feature-branch
