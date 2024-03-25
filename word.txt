@@ -1,13 +1,241 @@
-first step
-creating 
+4.//
+1.git clone <repository_url>
+{To clone a remote Git repository to your local machine, you can use the git clone command}
+
+2.For SSH:
+   git clone git@github.com:example/repo.git
+{This command will create a new directory with the name of the repository and download all the files from the remote repository into that directory. If the repository is private and requires authentication, you might need to use the SSH URL or provide your credentials during the cloning process.}
 
 
-making changes in main after doing the first step
+
+5.//
+1.git fetch 
+{Fetch the latest changes from the remote repository This command fetches the latest changes from the remote repository withoutautomatically merging them into your local branches.}
+
+2.git rebase origin/your-branch
+{ Rebase your local branch onto the updated remote branch assuming you are currently on the branch you want to update (replace your-branch with the actual name of your branch}
+
+3.git rebase --continue
+{Continue the rebase or resolve conflicts:
+If conflicts occurred during the rebase, Git will prompt you to resolve them. After resolving conflicts, you can continue the rebase with}
+
+4.git rebase --abort
+{If you decide to abort the rebase at any point, you can use}
 
 
-making a branch name feature-branch and staging ,commiting and pushing
+5.git push origin your-branch --force 
+
+{ Push the rebased branch to the remote repository After successfully rebasing your local branch, you may need to force-push the changes to the remote repository:
+git push origin your-branch --force}
+
+
+
+
+
+6.//
+1.git merge feature-branch -m "Your custom commit message"
+{To merge “feature-branch” into “master” and provide a custom commit message, you can use the following command}
+
+
+2.git merge --continue 
+{If conflicts occur during the merge, Git will pause and prompt you to resolve the conflicts manually. After resolving conflicts, you can continue the merge process with}
+
+
+3.git merge feature-branch --no-ff -e
+{Alternatively, you can use an interactive merge to modify the commit message before finalizing the merge  This opens an editor where you can edit the commit message before completing the merge. Again, replace “feature-branch” with the name of your actual feature branch.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.//
+1.git tag v1.0 commit id 
+{To create a lightweight Git tag named “v1.0” for a specific commit in your local repository, you can use the following command}
+
  
-deleted that feature-branch
-1.from local reposority (git branch -d feature-branch)
-2.from remote reposority (git push origin --delete feature-branch)
+2.git push origin v1.0 
+{If you want to push the tag to a remote repository This command pushes the tag named “v1.0” to the remote repository. Keep in mind that Git tags, by default, are not automatically pushed to remotes, so you need to explicitly push them if needed.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8.//
+1.git cherry-pick commit id 
+{to cherry-picka commit from source -branch to the current branch}
+
+2.git cherry-pick <start-commit id >^..<end-commit  id > 
+{To cherry-pick a range of commits from “source-branch” to the current branch}
+
+3.git cherry-pick --continue 
+{After running this command, Git will apply the specified range of commits onto yourcurrent branch. If there are any conflicts, Git will pause the cherry-pick process and ask you to resolve them. After resolving conflicts, you can continue the cherry- pick with}
+
+
+
+4.git cherry-pick --abort 
+{If you encounter issues and need to abort the cherry-pick operation, you can use}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9.//
+1.git show commit-id 
+{To view the details of a specific commit, including the author, date, and commit message, you can use the following Git command}
+
+
+2.git log -n 1 --pretty=format:"%h - %an, %ar : %s" commit-id
+  {If you only want a more concise summary of the commit information (without the changes) This command displays a one-line summary of the commit, showing the abbreviated commit hash (%h), author name (%an), relative author date (%ar), and commit message (%s).
+Remember to replace <commit-id>with the actual commit hash or reference you want to inspec}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10..///
+1.git log --author="JohnDoe" --since="2023-01-01" --until="2023-12-31"
+ {To list all commits made by the author “JohnDoe” between “2023-01-01” and “2023- 12-31,” you can use the following git logcommand with the --authorand --since/ --untiloptions  
+ This command will display the commit history that meets the specified criteria. Adjust the author name and date range according to your requirements. The --since and --untiloptions accept a variety of date and time formats, providing flexibility in specifying the date range.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11..///
+1.git log -n 5
+  {To display the last five commits in the repository’s history This command shows the latest five commits in the 
+  repository, with the most recent commit displayed at the top. Adjust the number after the -noption if you want to 
+   see a different number of commits.}
+
+2.git log -n 5 --oneline
+  {If you want a more concise output, you can use the --onelineoption 
+   This provides a one-line summary for each commit, including the abbreviated commit hash and the commit message.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12..//
+1.git revert commit id 
+  {To undo the changes introduced by a specific commit with the ID “abc123,” you can use the git revertcommand. The 
+    git revertcommand creates a new commit that undoes the changes made in a previous commit.}
+
+
+2.git reset --hard commit id
+  {After using git reset--hard your working directory will be modified to match the specified commit, discarding all 
+   commits made after it. Be cautious when using --hardas it is a forceful operation and can lead to data loss.}
+
+
 
